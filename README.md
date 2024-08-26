@@ -41,7 +41,6 @@
 > Docker Desktop
 > Git
 
-
 ## 시작하기
 
 > 0. Visual Studio Code를 실행하고, 왼쪽 위의 파일(File)을 클릭.

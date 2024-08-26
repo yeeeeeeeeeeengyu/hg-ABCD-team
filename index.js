@@ -33,10 +33,28 @@ app.use(express.json());
 app.use(express.static( path.join(__dirname, '/public')));
 app.use(bodyParser.urlencoded({extended : true}));
 
-app.get('/', function (req, res) {
+app.get('/', async (req, res) => {
     //메인 사이트
-    res.sendFile(path.join(__dirname, 'public/html/index.html'));
+    const db = await pool.getConnection();
+    try {
+        const [posts] = await db.query('SELECT * FROM posts');
+    } catch (err) {
+        console.log(err);
+        res.status(500).send('Database error');
+    } finally {
+        db.release();
+    }
+    res.render("index",{name : req.session.username});
 });
+
+app.get('/all', (req, res) => {
+    res.render("all",{name : req.session.username});
+})
+
+
+app.get('/season', (req, res) => {
+    res.render("season",{name : req.session.username});
+})
 
 app.get('/signup', (req, res) => {
     //유저 고르게 시킴
@@ -109,6 +127,13 @@ app.post('/signup_b', upload.none(), async (req, res) => {
 
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/html/login.html'));
+});
+
+app.get('/logout', (req, res) => {
+    delete req.session.username;
+    req.session.save(()=>{
+        res.redirect('/');
+    })
 });
 
 app.post('/login', async (req, res) => {

@@ -57,13 +57,16 @@
     <main>
         <h1 style="text-align: center; margin-top: 130px;">오늘의 상품</h1>
         <div id="cards">
-            <div class="card">
-                <!-- <img src="./img/slide_img1.png" alt=""> -->
+            <% for(let i = 0; i < 15; i++) { %>
+                <% if (i >= post.length) break; %>
+                <div class="card">
+                    <!-- <img src="./img/slide_img1.png" alt=""> -->
                     <div></div>
-                <p>제목</p>
-                <p>가격</p>
-                <p>지도</p>
-            </div>
+                    <p>제목: <%= post[i].title %></p>
+                    <p>가격: <%= post[i].price %></p>
+                    <p>설명: <%= post[i].content %></p>
+                </div>
+            <% } %>
         </div>
         </div>
     </main>

@@ -38,17 +38,32 @@ app.get('/', async (req, res) => {
     const db = await pool.getConnection();
     try {
         const [posts] = await db.query('SELECT * FROM posts');
+        // console.log(posts);
+        res.render("index",{
+            name : req.session.username,
+            post : posts
+        });
     } catch (err) {
         console.log(err);
         res.status(500).send('Database error');
     } finally {
         db.release();
     }
-    res.render("index",{name : req.session.username});
 });
 
-app.get('/all', (req, res) => {
-    res.render("all",{name : req.session.username});
+app.get('/all', async (req, res) => {
+    const db = await pool.getConnection();
+    try {
+        const [posts] = await db.query('SELECT * FROM posts');
+    res.render("all",{
+        name : req.session.username,
+        post : posts
+    });
+    } catch (err) {
+        console.log(err)
+    } finally {
+        db.release();
+    }
 })
 
 
@@ -121,9 +136,28 @@ app.post('/signup_b', upload.none(), async (req, res) => {
     } finally {
         db.release();
     }
-
 });
 
+
+app.post('/signup_c', upload.none(), async (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    const phonenum = req.body.phonenum;
+    const db = await pool.getConnection();
+    try {
+        const [overlab] = await db.query('select * from users where username = ?',[username]);
+        if (overlab.length > 0) {
+            res.json('overlab');
+        } else {
+            await db.query('insert into users (username, password, phonenum, role) values(?, ?, ?, "buyer")',[username, password, phonenum]);
+            res.json('success');
+        }
+    } catch (err) {
+        console.log(err)
+    } finally {
+        db.release();
+    }
+});
 
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/html/login.html'));

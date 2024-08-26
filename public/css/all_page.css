@@ -56,12 +56,13 @@ main {
 
 #cards {
     width: 1224px;
-    margin: 50px auto 80px auto;
+    margin: 10px auto;
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: last baseline;
 }
+
 
 .card div {
     background-color: #F8F9FA;
@@ -69,6 +70,10 @@ main {
     width: 251px;
     height: 223px;
     border-radius: 12px;
+}
+
+.card {
+    margin: 0 11px
 }
 
 #plus {

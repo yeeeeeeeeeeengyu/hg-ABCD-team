@@ -20,8 +20,8 @@
                         <img src="./img/main_icon/main_icon.png" alt="">
                         <h1>우리동네</h1>
                     </div>
-                    <form id="bottom" action="/api/signup_s" method="post">
-                        <span>이미 존재하는 아이디 입니다</span>
+                    <form id="bottom">
+                        <span id="error">이미 존재하는 아이디 입니다</span>
                         <input class="t" type="text" placeholder="아이디" name="username">
                         <input class="t" type="password" placeholder="비밀번호" name="password">
                         <input class="t" type="number" placeholder="전화번호" name="phonenum">
@@ -39,5 +39,39 @@
     <footer>
         <h1>Uri Dong-ne</h1>
     </footer>
+    <script>
+        document.getElementById('error').style.display = 'none';
+
+        let result;
+        const form = document.getElementById('bottom');
+        form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const payload = new URLSearchParams();
+
+        formData.forEach((value, key) => {
+            payload.append(key, value);
+        });
+
+        fetch('/signup_c', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: payload.toString(),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data === "success") {
+                document.getElementById('error').style.display = 'none';
+                window.location.href = '/login';
+            } else {
+                document.getElementById('error').style.display = 'inline';
+            }
+        })
+        .catch(err => console.error('Error:', err));        
+    });
+    </script>
 </body>
 </html>

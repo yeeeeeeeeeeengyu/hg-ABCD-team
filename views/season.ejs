@@ -36,7 +36,15 @@
                     <img src="./img/icon/logout.png" alt="" id="logout_icon">
                 </li>
                 <li>
-                    <a href="" id="logout"><p>로그아웃</p></a>
+                    <% if (name) { %>
+                        <a href="/logout" id="logout">
+                            <p>로그아웃</p>
+                        </a>
+                    <% } else { %>
+                        <a href="/login" id="logout">
+                            <p>로그인</p>
+                        </a>
+                    <% } %>
                 </li>
                 <li id="user_icon">
                     <a href=""><img src="./img/icon/user_icon.png" alt=""></a>

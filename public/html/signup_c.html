@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>우리동네</title>
+</head>
+<body>
+    <div id="main">
+        <div id="login_box">
+            <div id="login">
+                <img src="./img/main_icon/main_icon-y.png" alt="">
+                <p style="margin-top: 8px;">우리 동네 온라인 장터</p>
+                <h1 style="color: #38B63C; font-size: 40px;">우리동네</h1>
+            </div>
+            <div id="rladmscks">
+                <div id="input_box">
+                    <div id="top">
+                        <img src="./img/main_icon/main_icon.png" alt="">
+                        <h1>우리동네</h1>
+                    </div>
+                    <form id="bottom" action="/api/signup_s" method="post">
+                        <span>이미 존재하는 아이디 입니다</span>
+                        <input class="t" type="text" placeholder="아이디" name="username">
+                        <input class="t" type="password" placeholder="비밀번호" name="password">
+                        <input class="t" type="number" placeholder="전화번호" name="phonenum">
+                        <input type="submit" value="회원가입">
+                        <hr>
+                        <div id="foot">
+                            <a href="/login">로그인</a>
+                            <a href="">문의하기</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h1>Uri Dong-ne</h1>
+    </footer>
+</body>
+</html>

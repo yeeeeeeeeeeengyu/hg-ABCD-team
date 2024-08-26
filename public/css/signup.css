@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+}
+
+html {
+    background-color: #F4FAAA;
+}
+#main {
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F4FAAA;
+}
+
+#login_box {
+    width: 800px;
+    height: 450px;
+    display: flex;
+}
+
+#login img {
+    margin-top: 65px;
+    width: 250px;
+}
+
+#login h1 {
+    margin: 0;
+    text-align: center;
+}
+
+#login p {
+    text-align: center;
+    margin: 0;
+}
+
+#input_box {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+#rladmscks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 550px;
+}
+
+
+.t {
+    padding: 0 0 0 10px;
+    outline: none;
+    width: 393px;
+    height: 30px;
+    border: 1px solid #DBDBDB;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    margin: 5px auto;
+}
+
+input[type=submit] {
+    margin: 10px auto;
+    height: 30px;
+    background-color: #38B63C;
+    color: white;
+    width: 220px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+#top {
+    margin: 30px 0 15px 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top h1 {
+    font-size: 25px;
+    margin: 0;
+}
+
+#top img {
+    width: 50px;
+    height: 45px;
+}
+
+#bottom {
+    /* height: 200px; */
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+
+#bottom a {
+    margin: 5px 0;
+    color: black;
+    font-size: 12px;
+}
+
+hr {
+    width: 400px;
+    border: 0.5px solid #DBDBDB;
+}
+
+#bottom span {
+    font-size: 13px;
+    color: red;
+    margin-left: 49px;
+}
+
+#foot {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer {
+    background-color: #F4FAAA;
+}
+
+footer h1 {
+    text-align: center;
+    font-size: 23px;
+    margin: 0;
+    color: #6D6464;
+}

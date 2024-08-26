@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>우리동네</title>
+</head>
+<body>
+    <div id="main">
+        <div id="login_box">
+            <div id="login">
+                <img src="./img/main_icon/main_icon.png" alt="">
+                <p>우리 동네 온라인 장터</p>
+                <h1 style="color: #38B63C; font-size: 40px;">우리동네</h1>
+            </div>
+            <div id="rladmscks">
+                <div id="input_box">
+                    <div id="top">
+                        <img src="./img/main_icon/main_icon.png" alt="">
+                        <h1>우리동네</h1>
+                    </div>
+                    <form id="bottom">
+                        <span id="error">아이디 또는 비밀번호가 잘못되었습니다.</span>
+                        <input class="t" type="text" placeholder="아이디" name="username">
+                        <input class="t" type="password" placeholder="비밀번호" name="password">
+                        <input type="submit" value="로그인">
+                        <hr>
+                        <div id="foot">
+                            <a href="/signup">회원가입</a>
+                            <a href="">문의하기</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h1>Uri Dong-ne</h1>
+    </footer>
+    <script>
+        document.getElementById('error').style.display = 'none';
+
+        let result;
+        const form = document.getElementById('bottom');
+        form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const payload = new URLSearchParams();
+
+        formData.forEach((value, key) => {
+            payload.append(key, value);
+        });
+
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: payload.toString(),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data === "yes") {
+                window.location.href = '/';
+            } else {
+                document.getElementById('error').style.display = 'inline';
+            }
+        })
+        .catch(err => console.error('Error:', err));        
+        });
+    </script>
+</body>
+</html>

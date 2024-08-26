@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    margin: 20px auto 0;
+    width: 1530px;
+}
+
+.slider-container {
+    z-index: 0;
+    margin: 110px auto 0;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    max-width: 1500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#cards {
+    width: 1224px;
+    margin: 10px auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card div {
+    background-color: #F8F9FA;
+    border:1px solid #B4B4B5;
+    width: 251px;
+    height: 223px;
+    border-radius: 12px;
+}
+
+#plus {
+    width: 1224px;
+    margin: 50px auto;
+    font-weight: 800;
+    text-align: center;
+}
+
+hr {
+    width: 1224px;
+}
+
+#foot_in {
+    width: 1224px;
+    margin: 0 auto;
+}
+
+footer p {
+    color: #868B94;
+    margin: 3px;
+}
+
+footer p:nth-child(1) {
+    margin-top: 20px;
+}

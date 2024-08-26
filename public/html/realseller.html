@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/realseller.css">
+    <title>우리동네</title>
+</head>
+<body>
+    <main>
+        <div id="top">
+            <img src="./img/main_icon/B_icon.png" alt="">
+        </div>
+        <form id="main_box">
+            <p>판매자 인증하기</p>
+            <span id="error">잘못된 키 입니다.</span>
+            <input type="text" placeholder="인증번호 입력 (구청에서 발급가능)" name="key">
+            <input type="submit" value="인증번호 제출">
+            <hr>
+            <a href="">문의하기</a>
+        </from>
+    </main>
+    <script>
+        document.getElementById('error').style.display = 'none';
+
+        let result;
+        const form = document.getElementById('main_box');
+        form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const payload = new URLSearchParams();
+
+        formData.forEach((value, key) => {
+            payload.append(key, value);
+        });
+
+        fetch('/seller_check', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: payload.toString(),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data === "success") {
+                document.getElementById('error').style.display = 'none';
+                window.location.href = '/signup_b';
+            } else {
+                document.getElementById('error').style.display = 'inline';
+            }
+        })
+        .catch(err => console.error('Error:', err));        
+    });
+    </script>
+</body>
+</html>

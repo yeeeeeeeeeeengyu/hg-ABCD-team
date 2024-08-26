@@ -28,6 +28,9 @@ ABCD
 
 https://github.com/hackersground-kr/hg-ABCD-team/blob/main/images/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-08-26%20112256.png
 
+![스크린샷 2024-08-26 161514](https://github.com/user-attachments/assets/ace2a792-bc0e-4339-8081-c501fa542b9c)
+
+
 ## 제품 소개 슬라이드
 
 **(필수)** 제품 또는 서비스를 소개하는 슬라이드 덱을 리포지토리에 추가해 주세요. 슬라이드 덱은 [decks](./decks) 디렉토리에 저장한 후 이곳에 링크를 걸어주세요.

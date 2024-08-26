@@ -26,9 +26,9 @@ ABCD
 
 ## 제품 아키텍처 (이미지)
 
-https://github.com/hackersground-kr/hg-ABCD-team/blob/main/images/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-08-26%20112256.png
-
 ![스크린샷 2024-08-26 161514](https://github.com/user-attachments/assets/ace2a792-bc0e-4339-8081-c501fa542b9c)
+
+![스크린샷 2024-08-26 184901](https://github.com/user-attachments/assets/88e101b6-155d-449e-a822-95ca63f1fe38)
 
 
 ## 제품 소개 슬라이드

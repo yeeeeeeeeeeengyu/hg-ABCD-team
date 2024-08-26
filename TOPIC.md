@@ -26,7 +26,7 @@ ABCD
 
 ## 제품 아키텍처 (이미지)
 
-**(필수)** 제품 또는 서비스의 전체 구성도 또는 아키텍처를 이미지로 작성해 주세요. 이미지는 [images](./images) 디렉토리에 저장한 후 이곳에 링크를 걸어주세요.
+https://github.com/hackersground-kr/hg-ABCD-team/blob/main/images/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-08-26%20112256.png
 
 ## 제품 소개 슬라이드
 
